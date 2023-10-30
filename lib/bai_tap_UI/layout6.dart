@@ -10,73 +10,94 @@ class LayoutScreen6 extends StatefulWidget {
 class _LayoutScreen6State extends State<LayoutScreen6> {
   @override
   Widget build(BuildContext context) {
-    final heightScreen = MediaQuery.of(context).size.height;
-    final widthScreen = MediaQuery.of(context).size.width;
-    return Material(
-      child: Column(
-        children: [
-          Row(
+    // final heightScreen = MediaQuery.of(context).size.height;
+    // final widthScreen = MediaQuery.of(context).size.width;
+    return Expanded(
+      child: Column(children: [
+        Expanded(
+          flex: 1,
+          child: Row(
             children: [
-              Container(
-                color: Colors.blue,
-                height: heightScreen / 2,
-                width: widthScreen / 2,
+              Expanded(
+                flex: 1,
+                child: Container(
+                  color: Colors.blue,
+                ),
               ),
-              Column(
-                children: [
-                  Container(
-                    color: Colors.red,
-                    height: heightScreen / 4,
-                    width: widthScreen / 2,
-                  ),
-                  Row(
-                    children: [
-                      Column(
+              Expanded(
+                flex: 1,
+                child: Column(
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: Container(
+                        color: Colors.red,
+                      ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Row(
                         children: [
-                          Row(
-                            children: [
-                              Container(
-                                color: Color.fromARGB(255, 193, 64, 0),
-                                height: heightScreen / 16,
-                                width: widthScreen / 8,
-                              ),
-                              Container(
-                                color: Color.fromARGB(255, 0, 255, 247),
-                                height: heightScreen / 16,
-                                width: widthScreen / 8,
-                              )
-                            ],
+                          Expanded(
+                            flex: 1,
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  flex: 1,
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        flex: 1,
+                                        child: Container(
+                                          color: Colors.brown,
+                                        ),
+                                      ),
+                                      Expanded(
+                                        flex: 1,
+                                        child: Container(
+                                          color: Colors.greenAccent,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                    color: Colors.green,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                          Container(
-                            color: Colors.green,
-                            height: heightScreen / 16,
-                            width: widthScreen / 4,
-                          )
+                          Expanded(
+                            flex: 1,
+                            child: Container(
+                              color: Colors.purple,
+                            ),
+                          ),
                         ],
                       ),
-                      Container(
-                        color: Colors.purple,
-                        height: heightScreen / 8,
-                        width: widthScreen / 4,
-                      )
-                    ],
-                  ),
-                  Container(
-                    color: Colors.yellow,
-                    height: heightScreen / 8,
-                    width: widthScreen / 2,
-                  )
-                ],
-              )
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        color: Colors.yellow,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
-          Container(
+        ),
+        Expanded(
+          flex: 1,
+          child: Container(
             color: Colors.black,
-            height: heightScreen / 2,
-            width: widthScreen,
-          )
-        ],
-      ),
+          ),
+        ),
+      ]),
     );
   }
 }

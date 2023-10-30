@@ -11,20 +11,22 @@ class _LayoutScreen1State extends State<LayoutScreen1> {
   @override
   Widget build(BuildContext context) {
     // return const Placeholder();
-    final screenHeight = MediaQuery.of(context).size.height;
-    // chiều cao màn hình
-
-    final topHeight = screenHeight * 0.333;
+    // final screenHeight = MediaQuery.of(context).size.height;
+    // final topHeight = screenHeight * 0.333;
 
     return Material(
       child: Column(children: [
-        Container(
-          color: Colors.red,
-          height: topHeight,
+        Expanded(
+          flex: 1,
+          child: Container(
+            color: Colors.red,
+          ),
         ),
-        Container(
-          color: Colors.blue,
-          height: screenHeight - topHeight,
+        Expanded(
+          flex: 2,
+          child: Container(
+            color: Colors.blue,
+          ),
         )
       ]),
     );

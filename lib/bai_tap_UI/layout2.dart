@@ -11,9 +11,9 @@ class _LayoutScreen2State extends State<LayoutScreen2> {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
-    final topHeight = screenHeight * 0.333;
+    final topHeight = screenHeight / 3;
 
-    return Material(
+    return Expanded(
       child: Column(children: [
         Container(
           color: Colors.red,

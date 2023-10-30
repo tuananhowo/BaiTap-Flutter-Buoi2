@@ -12,28 +12,34 @@ class _LayoutScreen3State extends State<LayoutScreen3> {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
-    final topHeight = screenHeight * 0.333;
-    final bottomWidth = screenWidth * 0.5;
+    final topHeight = screenHeight / 3;
+    final bottomWidth = screenWidth / 2;
 
-    return Material(
-      child: Stack(
+    return Expanded(
+      child: Column(
         children: [
-          Container(
-            color: Colors.red,
-            height: topHeight,
-          ),
-          Container(
-            color: Colors.blue,
-            height: screenHeight - topHeight,
-            margin: EdgeInsets.only(top: topHeight),
-          ),
-          Positioned(
-            right: 0,
-            bottom: 0,
-            child: Container(
-                color: Colors.yellow,
-                height: screenHeight * 0.2,
-                width: bottomWidth),
+          Expanded(
+              flex: 1,
+              child: Container(
+                color: Colors.red,
+              )),
+          Expanded(
+            flex: 2,
+            child: Stack(
+              children: [
+                Container(
+                  color: Colors.blue,
+                ),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    color: Colors.yellow,
+                    height: topHeight * 2 / 3,
+                    width: bottomWidth,
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

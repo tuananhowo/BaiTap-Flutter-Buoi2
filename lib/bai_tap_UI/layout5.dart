@@ -10,32 +10,37 @@ class LayoutScreen5 extends StatefulWidget {
 class _LayoutScreen5State extends State<LayoutScreen5> {
   @override
   Widget build(BuildContext context) {
-    final heightScreen = MediaQuery.of(context).size.height;
-    final widthScreen = MediaQuery.of(context).size.width;
-    return Material(
-      child: Column(
-        children: [
-          Row(
+    // final heightScreen = MediaQuery.of(context).size.height;
+    // final widthScreen = MediaQuery.of(context).size.width;
+
+    return Expanded(
+      child: Column(children: [
+        Expanded(
+          flex: 1,
+          child: Row(
             children: [
-              Container(
-                color: Colors.red,
-                height: heightScreen * 0.333,
-                width: widthScreen * 0.333,
+              Expanded(
+                flex: 1,
+                child: Container(
+                  color: Colors.red,
+                ),
               ),
-              Container(
-                color: Colors.yellow,
-                height: heightScreen * 0.333,
-                width: widthScreen * 0.666,
-              )
+              Expanded(
+                flex: 2,
+                child: Container(
+                  color: Colors.yellow,
+                ),
+              ),
             ],
           ),
-          Container(
+        ),
+        Expanded(
+          flex: 2,
+          child: Container(
             color: Colors.blue,
-            height: heightScreen * 0.666,
-            width: widthScreen,
-          )
-        ],
-      ),
+          ),
+        ),
+      ]),
     );
   }
 }
